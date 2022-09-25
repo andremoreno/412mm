@@ -1,0 +1,49 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+timezone: "Asia/Jakarta"
+
+exclude: ['Gemfile*', 'README*','LICENSE*', 'vendor','_photos']
+keep_files: ['.gitkeep']
+
+destination: public
+
+plugins:
+  - jekyll-assets
+  - jekyll-paginate
+  - exifr
+
+# Setup
+title:               4.12mm
+tagline:             'Journey with the 4.12mm f/2.4 lens and a 7.61x crop factor.'
+url:                 https://412mm.andremoreno.com
+paginate:            5
+baseurl:             "/"
+
+# mini_magick
+mini_magick:
+    thumb:
+        source: _photos
+        destination: photos/thumb
+        resize: "640x640"
+        quality: "80"
+        interlace: "plane"
+        depth: "8"
+    large:
+        source: _photos
+        destination: photos/
+        resize: "1280x1280"
+
+
+assets:
+  compress:
+    css: true
+    js: true
+
+  #cache_type: memory
+  prefix: "/assets"
+  digest: true
+  sources:
+    - _assets
